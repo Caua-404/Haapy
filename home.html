@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seu Dia — Iasmim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <!-- fundos -->
+  <canvas id="bgParticles"></canvas>
+  <canvas id="sky"></canvas>
+  <canvas id="fxFire" class="fireworks" hidden></canvas>
+
+  <!-- topo -->
+  <header class="topbar">
+    <div class="brand">Seu Dia • <span>Iasmim</span></div>
+    <nav class="actions">
+      <button id="btnSound" class="btn btn-outline">Som ✦</button>
+      <button id="btnSecret" class="btn">Segredo</button>
+      <button id="btnLogout" class="btn btn-outline">Sair</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Visualizador de áudio -->
+<canvas id="vizBars"></canvas>
+<canvas id="candles"></canvas>
+<!-- Golden Snitch -->
+<div id="snitch" aria-hidden="true"></div>
+    <section class="hero">
+      <h1>Feliz Aniversário!</h1>
+      <p class="lead">Preparei uma linha do tempo com memórias desde <strong>2018</strong> — e algumas surpresas ✨</p>
+    </section>
+
+    <section class="timeline-wrap">
+      <h2>Linha do Tempo</h2>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section id="galleryWrap" class="gallery-wrap" hidden>
+     <h2>Galeria</h2>
+     <div id="gallery" class="gallery"></div>
+    </section>
+
+    <!-- Final épico -->
+    <section class="final-wrap">
+      <h2>Um último detalhe…</h2>
+      <p class="muted">Role até o fim ou clique abaixo para a surpresa ✨</p>
+      <button id="btnFinal" class="btn">Ver a surpresa</button>
+      <div id="finalMsg" class="final-msg"></div>
+    </section>
+
+    <!-- Mensagem dela -->
+    <section class="guestbook-wrap">
+      <h2>De você para nós</h2>
+      <p class="muted">Escreva algo que você quer lembrar no futuro 💌</p>
+      <div class="guest-actions">
+        <button id="btnGuest" class="btn">Escrever minha mensagem</button>
+      </div>
+      <div id="guestRender" class="guest-render" hidden></div>
+    </section>
+
+    <!-- Sentinel para auto-disparar o final ao fim da página -->
+  </main>
+
+  <!-- Modal de história -->
+  <div id="storyModal" class="modal" hidden>
+    <div class="modal__box">
+      <img id="storyImg" alt="" />
+      <div class="modal__body">
+        <h3 id="storyTitle"></h3>
+        <p id="storyText"></p>
+        <div class="modal__actions">
+          <button id="storyClose" class="btn">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal da mensagem dela -->
+  <div id="guestModal" class="modal" hidden>
+    <div class="modal__box">
+      <div class="modal__body">
+        <h3>Sua mensagem</h3>
+        <textarea id="guestText" rows="6" style="width:100%;border-radius:10px;padding:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff"></textarea>
+        <div class="modal__actions" style="margin-top:10px;display:flex;gap:8px">
+          <button id="guestSave" class="btn">Salvar</button>
+          <button id="guestCancel" class="btn btn-outline">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Áudio local (MP3) + controles flutuantes -->
+  <div class="audio">
+    <audio id="bgAudio" preload="metadata" loop>
+      <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+    <button id="btnPlay" class="btn">Play</button>
+    <button id="btnSound2" class="btn btn-outline">Som ✦</button>
+  </div>
+
+  <!-- Overlay para liberar áudio por gesto -->
+  <div id="audioGate">
+    <button id="gateBtn" class="btn">Toque para começar a experiência ✨</button>
+  </div>
+
+  <script src="js/home.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body{
+  background: radial-gradient(1200px 600px at 70% -10%, rgba(255,255,255,0.08), transparent 60%),
+              radial-gradient(900px 500px at -10% 110%, rgba(255,255,255,0.06), transparent 60%),
+              #0b0f1a;
+  color:#e9eef7; min-height:100dvh; display:grid; place-items:center; overflow:hidden;
+}
+#fx-particles{ position:fixed; inset:0; z-index:0; pointer-events:none; }
+
+.card{
+  position:relative; z-index:1; width:min(420px,90vw);
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+  padding:28px 24px; border-radius:18px; box-shadow: 0 30px 80px rgba(0,0,0,.45);
+}
+.card h1{ font-family:"Sawarabi Mincho",serif; font-weight:400; letter-spacing:.4px; margin:0 0 4px }
+.sub{ opacity:.8; margin:0 0 18px; font-size:14px }
+
+label{ display:block; margin:12px 0 6px; font-size:13px; opacity:.9 }
+input{
+  width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04); color:#fff; outline:none;
+}
+input:focus{ border-color:#8ad; box-shadow:0 0 0 3px rgba(80,150,255,.15) }
+
+.btn{
+  width:100%; margin-top:16px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(180deg,#1c2333,#141a28); color:#fff; cursor:pointer; font-weight:600;
+  transition: transform .08s ease, box-shadow .2s ease;
+}
+.btn:hover{ box-shadow:0 10px 30px rgba(0,0,0,.35) }
+.btn:active{ transform:translateY(1px) }
+
+.msg{ min-height:20px; margin-top:10px; color:#ffc6c6; font-size:13px }
+
+/* Modal */
+.modal{ position:fixed; inset:0; background:rgba(0,0,0,.55); display:grid; place-items:center; z-index:10 }
+.modal__box{ width:min(520px,92vw); border-radius:14px; background:#111827; color:#fff; border:1px solid rgba(255,255,255,.08) }
+.modal__body{ padding:20px }
+.modal__actions{ display:flex; justify-content:flex-end; margin-top:14px }
+.modal .btn{ width:auto; }

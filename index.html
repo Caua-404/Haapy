@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrar — Iasmim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <canvas id="fx-particles"></canvas>
+
+  <div class="card">
+    <h1>Nosso Dia</h1>
+    <p class="sub">Acesso exclusivo para Iasmim 💖</p>
+
+    <form id="loginForm" autocomplete="off">
+      <label for="name">Seu nome</label>
+      <input id="name" type="text" placeholder="Iasmim" required />
+
+      <label for="password">Senha</label>
+      <input id="password" type="password" placeholder="••••••••" required />
+
+      <button class="btn" type="submit">Entrar</button>
+      <div id="message" class="msg"></div>
+    </form>
+  </div>
+
+  <!-- Modal de aviso para intrusos -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal__box">
+      <div class="modal__body">
+        <p id="modalText"></p>
+        <div class="modal__actions">
+          <button id="modalClose" class="btn">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/login.js" defer></script>
+</body>
+</html>
